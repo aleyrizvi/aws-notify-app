@@ -8,11 +8,11 @@ provider:
   name: aws
   runtime: nodejs10.x
   stage: dev
-  profile: asad
+  profile: mibuilding
   region: us-east-1
   memorySize: 512
   iamRoleStatements:
-  - Effect: 
+  - Effect: Allow
     Action:
       - dynamodb:DescribeTable
       - dynamodb:Query
@@ -26,13 +26,13 @@ provider:
     
 
 functions:
-  second:
+  new-note:
     handler: handler.putData
     events:
       - http:
-          method: get
+          method: POST
           path: /
           cors: true
           request:
             schema:
-              application/json: ${schemas/notes-post.json)}
+              application/json: ${file(schemas/notes-post.json)}

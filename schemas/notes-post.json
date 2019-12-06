@@ -3,7 +3,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "title": "nomado sms/send schema",
-  "required": ["to", "message"],
+  "required": ["type", "message"],
   "properties": {
     "type": {
       "type": "string",
