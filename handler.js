@@ -15,7 +15,7 @@ export const putData = async (event, context) => {
     await dbPutItem('notify-data', Data)
     
     //ALL IS WELL!
-    return response(200, Data)
+    return response(201, Data)
 
   } catch (error) {
     //Hmm, something went wrong. TODO: Catch error and log somewhere. Slack perhaps?
