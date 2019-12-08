@@ -43,3 +43,13 @@ functions:
           method: GET
           path: /
           cors: true
+  complete-item:
+    handler: handler.completeItem
+    events:
+      - http:
+          method: PATCH
+          path: /{ID}
+          cors: true
+          request:
+            parameters:
+              ID: true
