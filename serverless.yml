@@ -36,3 +36,10 @@ functions:
           request:
             schema:
               application/json: ${file(schemas/notes-post.json)}
+  get-items:
+    handler: handler.getData
+    events:
+      - http:
+          method: GET
+          path: /
+          cors: true

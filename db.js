@@ -17,6 +17,17 @@ export const dbGetItem = async (table, data) => {
   //TODO: Fetch single Item
 }
 
+//Fetch all items from database
+export const dbGetAll = async (table) => {
+  
+  const param = {
+    TableName: table
+  }
+
+  let result = await DDB.scan(param).promise()
+
+  return result
+}
 
 //core call: dynamodb get item
 export const _getItem = async params => {
